@@ -478,7 +478,7 @@
 
 <!-- MAIN CONTENT -->
 <div id="content" style="display:none">
-<div style="min-height:100vh;animation:fadeIn 1.2s ease both;">
+<div style="min-height:100vh;">
 
   <!-- HERO -->
   <section style="position:relative;height:100svh;min-height:500px;overflow:hidden;display:flex;align-items:flex-end;">
@@ -831,7 +831,9 @@
 
   function showContent() {
     document.getElementById('gate').style.display = 'none';
-    document.getElementById('content').style.display = '';
+    var c = document.getElementById('content');
+    c.style.display = '';
+    void c.offsetHeight; // force reflow
     initAnimations();
   }
 
